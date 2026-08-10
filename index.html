@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="Za8hBn4awvzJa9MH3TCHg_NOMxvPj9YhblMJsfdkQV0" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ataxi | Driven by Trust</title>
+<title>Best Taxi Service in Kannur | A Taxi - Airport & Outstation</title>
 
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,21 +23,29 @@
             <img src="images/logo.jpeg" alt="ataxi Logo">
         </div>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#service" class="nav-link">Service</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
 
         <a href="tel:+91 94968 50838" class="call-btn">
             Call Now
         </a>
 
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </nav>
 </header>
 
+<!-- Mobile nav overlay -->
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <section class="hero" id="home"> 
 
@@ -46,20 +55,19 @@
 
 <h3>Welcome To</h3>
 
-<h1>ataxi</h1>
+<h1>Best Taxi Service in Kannur</h1>
 
 <h2>Driven by Trust.</h2>
 
 <p class="tagline">
-Safe • Reliable • Comfortable Taxi Service
+Safe • Reliable • Comfortable Taxi Service in kannur
 </p>
 
 <p class="description">
-Book your ride anytime with professional drivers,
-clean vehicles, and transparent pricing.
-Ataxi is committed to providing safe,
-comfortable, and on-time transportation
-for every journey.
+    A Taxi provides safe and reliable taxi services in Kannur,
+    including local trips, airport transfers and outstation rides.
+    Book your ride anytime with professional drivers and comfortable vehicles.
+
 </p>
 
 <div class="buttons">
@@ -262,7 +270,7 @@ for every journey.
                 <i class="fa-solid fa-envelope"></i>
                 <div>
                     <h3>Email Address</h3>
-                    <p>info@ataxi.com</p>
+                    <a href="mailto:ataxikannur@gmail.com">ataxikannur@gmail.com</a>
                 </div>
             </div>
 
@@ -287,15 +295,15 @@ for every journey.
         <!-- Contact Form -->
         <div class="contact-form">
 
-            <form>
+            <form onsubmit="sendWhatsApp(event)">
 
-                <input type="text" placeholder="Full Name">
+                <input type="text" id="name" placeholder="full name" required>
 
-                <input type="tel" placeholder="Phone Number">
+                <input type="tel" id="phone" placeholder="phone number" required>
 
-                <input type="email" placeholder="Email Address">
+                <input type="email" id="email" placeholder="email address" required>
 
-                <textarea rows="6" placeholder="Your Message"></textarea>
+                <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
 
                 <button type="submit">
                     Send Message
@@ -311,11 +319,11 @@ for every journey.
 
         <h3>Follow Us</h3>
 
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/1PDYwDYjJg/?mibextid=wwXIf"><i class="fa-brands fa-facebook-f"></i></a>
 
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/ataxi_in?igsh=MTM0eWZjejJyeXFrNg%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
 
-        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/919961650838"><i class="fa-brands fa-whatsapp"></i></a>
 
     </div>
 
@@ -388,11 +396,12 @@ for every journey.
 
     <div class="footer-social">
 
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/1PDYwDYjJg/?mibextid=wwXIf"><i class="fa-brands fa-facebook-f"></i></a>
 
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/ataxi_in?igsh=MTM0eWZjejJyeXFrNg%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
 
-        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/919961650838"><i class="fa-brands fa-whatsapp"></i></a>
+
 
     </div>
 
@@ -409,6 +418,31 @@ for every journey.
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+function sendWhatsApp(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const text = `Hello A Taxi,
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Message: ${message}`;
+
+    const whatsappURL =
+        "https://wa.me/919496850838?text=" +
+        encodeURIComponent(text);
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
 
 
 </body>
