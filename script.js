@@ -65,6 +65,29 @@ window.addEventListener('scroll', () => {
 });
 
 // ================================
+// ACTIVE NAV LINK ON SCROLL
+// ================================
+
+const sections   = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-link');
+
+const activeLinkObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Remove active from all links
+            navAnchors.forEach(a => a.classList.remove('active'));
+            // Add active to matching link
+            const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+        }
+    });
+}, {
+    rootMargin: '-40% 0px -55% 0px' // triggers when section is in the middle of the viewport
+});
+
+sections.forEach(section => activeLinkObserver.observe(section));
+
+// ================================
 // GALLERY SCROLL ANIMATION
 // ================================
 
@@ -92,4 +115,4 @@ const contactObserver = new IntersectionObserver((entries) => {
 contactObserver.observe(contactSection);
 contactObserver.observe(contactInfo);
 contactObserver.observe(contactForm);
-contactObserver.observe(socialMedia);
+contactObserver.observe(socialMedia);
