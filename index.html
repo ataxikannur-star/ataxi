@@ -25,21 +25,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TaxiService",
-  "name": "ataxi",
+  "@type": ["LocalBusiness", "TaxiService"],
+  "name": "A Taxi",
   "url": "https://www.ataxi.services/",
   "telephone": "+919496850838",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Kannur Airport",
-    "addressRegion": "Kerala",
-    "addressCountry": "IN"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Kannur"
-  },
-  "openingHours": "Mo-Su 00:00-23:59"
+  "description": "Reliable taxi service in Kannur offering airport transfers, local trips and outstation rides.",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Kannur"
+    },
+    {
+      "@type": "Place",
+      "name": "Kannur International Airport"
+    }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
 }
 </script>
 
